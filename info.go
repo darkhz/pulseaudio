@@ -246,6 +246,10 @@ func (c *Client) sinks() ([]sink, error) {
 	return sinks, nil
 }
 
+func (c *Client) Sinks() ([]sink, error) {
+	return c.sinks()
+}
+
 func (c *Client) Cards() ([]Card, error) {
 	b, err := c.request(commandGetCardInfoList)
 	if err != nil {
